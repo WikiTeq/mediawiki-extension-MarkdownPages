@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daniel Scherzer"
+		]
+	},
+	"markdownpages-desc": "{{desc|name=MarkdownPages}}",
+	"content-model-markdown": "{{optional}}Name of the markdown content model"
+}

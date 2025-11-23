@@ -1,0 +1,41 @@
+{
+	"name": "MarkdownPages",
+	"author": [
+		"Daniel Scherzer"
+	],
+	"descriptionmsg": "markdownpages-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\MarkdownPages\\": "src/"
+	},
+	"MessagesDirs": {
+		"MarkdownPages": [
+			"i18n"
+		]
+	},
+	"HookHandlers": {
+		"markdown": {
+			"class": "\\MediaWiki\\Extension\\MarkdownPages\\MarkdownHooks"
+		}
+	},
+	"Hooks": {
+		"ContentHandlerDefaultModelFor": "markdown"
+	},
+	"ContentHandlers": {
+		"markdown": {
+			"class": "MediaWiki\\Extension\\MarkdownPages\\MarkdownContentHandler",
+			"services": [
+				"MainConfig",
+				"ParserFactory",
+				"TitleFactory",
+				"UrlUtils"
+			]
+		}
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
+}

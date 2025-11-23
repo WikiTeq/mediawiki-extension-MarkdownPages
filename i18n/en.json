@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daniel Scherzer"
+		]
+	},
+	"markdownpages-desc": "Content handler to support wiki pages written in markdown",
+	"content-model-markdown": "Markdown"
+}
