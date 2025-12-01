@@ -1,7 +1,8 @@
 {
 	"name": "MarkdownPages",
 	"author": [
-		"Daniel Scherzer"
+		"Daniel Scherzer",
+		"WikiTeq"
 	],
 	"descriptionmsg": "markdownpages-desc",
 	"license-name": "MIT",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Daniel Scherzer"
+			"Daniel Scherzer",
+			"WikiTeq"
 		]
 	},
 	"markdownpages-desc": "Content handler to support wiki pages written in markdown",
