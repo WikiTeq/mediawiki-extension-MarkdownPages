@@ -201,7 +201,7 @@ class MarkdownContentHandler extends TextContentHandler {
 		// Register both local and external links with MediaWiki so that they
 		// show up in page metadata and are known to API modules and special
 		// pages like [[Special:WhatLinksHere]] and [[Special:LinkSearch]].
-		// This may also replace some of the links
+		// This will also replace links to local pages
 		$allLinks = ( new Query() )
 			->where( Query::type( Link::class ) )
 			->findAll( $parsedResult );
@@ -241,24 +241,22 @@ class MarkdownContentHandler extends TextContentHandler {
 				}
 				// Only add valid titles as recorded links
 				$parserOutput->addLink( $title );
-				// If CommonMark would disable the link, we need to use a
-				// different renderer. This is needed for e.g. links to the
-				// file namespace.
-				if ( RegexHelper::isLinkPotentiallyUnsafe( $originalUrl ) ) {
-					$attribs = [];
-					if ( $link->getTitle() ) {
-						$attribs['title'] = $link->getTitle();
-					}
-					$link->replaceWith(
-						new MWPreprocessedInline(
-							$this->linkRenderer->makeLink(
-								$title,
-								$renderer->renderNodes( $link->children() ),
-								$attribs
-							)
-						)
-					);
+				// Always use MediaWiki's rendering of wikilinks, so that we
+				// have access to redlinks for missing pages and reflect the
+				// correct paths
+				$attribs = [];
+				if ( $link->getTitle() ) {
+					$attribs['title'] = $link->getTitle();
 				}
+				$link->replaceWith(
+					new MWPreprocessedInline(
+						$this->linkRenderer->makeLink(
+							$title,
+							$renderer->renderNodes( $link->children() ),
+							$attribs
+						)
+					)
+				);
 			}
 		}
 
