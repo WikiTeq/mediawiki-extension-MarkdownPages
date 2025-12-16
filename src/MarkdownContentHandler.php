@@ -217,7 +217,7 @@ class MarkdownContentHandler extends TextContentHandler {
 			// Resolve the url so that relative paths work
 			$url = $this->urlUtils->removeDotSegments( $originalUrl );
 			if ( $this->urlUtils->parse( $url ) !== null ) {
-				// Valid external link according to MediaWiki			
+				// Valid external link according to MediaWiki
 				// Skip unsafe links since the renderer will skip those too; use
 				// same implementation as the renderer does, see the
 				// ...\Extension\CommonMark\Renderer\Inline\LinkRenderer::render()
