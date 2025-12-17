@@ -31,6 +31,7 @@
 			"class": "MediaWiki\\Extension\\MarkdownPages\\MarkdownContentHandler",
 			"services": [
 				"MainConfig",
+				"LinkRenderer",
 				"ParserFactory",
 				"TitleFactory",
 				"UrlUtils"
