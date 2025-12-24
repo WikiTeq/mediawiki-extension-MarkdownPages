@@ -1,5 +1,10 @@
 # MarkdownPages
 
+<p align="center">
+  <img src="mascot.png" alt="WikiTeq MarkdownPages mascot playing an arcade cabinet" width="720">
+</p>
+
+
 ## Installation
 
 To install and enable the MarkdownPages extension:
